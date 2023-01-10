@@ -14,7 +14,6 @@ import { BookRoutingModule } from './book-routing.module';
   imports: [
     CommonModule,
     BookRoutingModule
-    
   ]
 })
 export class BookModule { }
