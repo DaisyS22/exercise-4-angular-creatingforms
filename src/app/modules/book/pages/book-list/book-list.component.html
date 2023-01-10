@@ -1,0 +1,16 @@
+<!-- <app-book-item></app-book-item> -->
+<!-- <div *ngFor="let book of books">
+    id: {{book.id}}<br>
+    name: {{book.name}}<br>
+    authors: {{book.authors}}<br>
+    isbn: {{book.isbn}}<br>
+</div> -->
+
+<app-book-item *ngFor="let book of books" [book]="book">
+</app-book-item>
+
+
+
+
+  
+  
