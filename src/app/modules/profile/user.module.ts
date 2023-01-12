@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './components/profile.component';
 import { UserRouteModule } from './user-route.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -10,8 +11,8 @@ import { UserRouteModule } from './user-route.module';
   ],
   imports: [
     CommonModule,
-    UserRouteModule
-
+    UserRouteModule,
+    SharedModule
   ]
 })
 export class UserModule { }

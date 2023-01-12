@@ -4,12 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'book',
+    redirectTo: 'blog',
     pathMatch: 'full'
   },
   {
     path: 'book',
     loadChildren: () => import('./modules/book/book.module').then(m => m.BookModule)
+  },
+  {
+    path: 'book/form',
+    loadChildren: () => import('./modules/book/pages/book-form.module').then(m => m.BookFormModule)
   },
   {
     path: 'blog',

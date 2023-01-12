@@ -27,7 +27,10 @@ export class BookService {
 
   constructor() {}
 
+  
+
   getBooks() {
     return this.books;
+    // return this.https.get('http://localhost:3000/books')
   }
 }

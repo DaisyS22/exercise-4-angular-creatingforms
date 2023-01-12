@@ -7,7 +7,7 @@ export class BlogService {
 
   blogs: any[] = [
     {
-      name: 1,
+      id: 1,
       title: 'How to cook an egg',
       description: 'This is a description of how to cook an egg',
       author: 'Rogelio Umbay',

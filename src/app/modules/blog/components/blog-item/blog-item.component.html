@@ -1,11 +1,27 @@
+<br>
 
-<div>
+<div class="card">
+<div class="card__content">
+    <div class="center">
+    <p class="font__color">
     id: {{blog.id}}<br>
     name: {{blog.title}}<br>
-    descriptin: {{blog.content}}<br>
-    author: {{blog.author}}<br>
-    comments: {{blog.comments}}<br>
-
+    description: {{blog.description}}<br>
+    author: {{blog.author}}<br><br>
+    </p>    
+    </div>
+    <div class="divStyle" *ngFor="let comment of blog.comments">
+        <div>
+            Comments:<br>
+            name: {{comment.name}}<br>
+            comment: {{comment.comment}}<br>
+        </div>
+    </div>
+    <br>
     <button (click)="editBook()">Edit</button>
-    <button (click)="deleteBook()">Delete</button>
+    <button (click)="deleteBook()">Delete</button><br>
+ 
+    <br>
 </div>
+</div>
+
