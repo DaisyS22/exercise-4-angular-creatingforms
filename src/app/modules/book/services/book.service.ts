@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BookService {
   books: any[] = [
     {
@@ -24,6 +25,7 @@ export class BookService {
       isbn: '978-0446310789'
     }
   ];
+  values: any;
 
   constructor() {}
 
