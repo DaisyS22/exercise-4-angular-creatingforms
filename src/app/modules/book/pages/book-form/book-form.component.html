@@ -6,8 +6,10 @@
     </div>
     <ng-container formArrayName="authors">
         <label for="authors">Authors</label>
-        <input formControlName="author" class="form-control">
-    </ng-container><br>
+        <div class="input-group mb-3" *ngFor="let _ of authorsForm.controls; index as i">
+            <input [formControlName]="i" class="form-control">
+        </div>
+    </ng-container>
     <div class="form-group">
         <label for="isbn">ISBN</label>
         <input formControlName="isbn" class="form-control">

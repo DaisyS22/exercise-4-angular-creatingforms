@@ -10,39 +10,27 @@ import { BookService } from '../../services/book.service';
 })
 export class BookFormComponent implements OnInit {
 
+ bookForm: FormGroup;
+ authorsForm: FormArray;
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private bookService: BookService) {
+    this.bookForm = this.fb.group({
+      name: new FormControl('KEKW'),
+      authors: this.fb.array([
+        new FormControl('daisy'),
+        new FormControl('syete'),
+      ]),
+      isbn: new FormControl('1234123'),
+    });
 
-  bookForm = new FormGroup({
-    name: new FormControl('daisy'),
-    authors: new FormArray([]),
-    isbn: new FormControl('1234123'),
-  });
-
-  constructor(private bookService: BookService) { }
-
-
-    ngOnInit(): void {
- 
-   }
+    this.authorsForm = this.bookForm.get('authors') as FormArray;
+    
     
   }
-
-
-  // authorsForm: FormArray;
-  // constructor(private fb: FormBuilder, private route: ActivatedRoute, private bookService: BookService) {
-  //   this.bookForm = this.fb.group({
-  //     name: new FormControl(''),
-  //     authors: this.fb.array([
-  //       new FormControl('daisy'),
-  //       new FormControl('syete'),
-  //     ]),
-  //     isbn: new FormControl('1234123'),
-  //   });
-
-  //   this.authorsForm = this.bookForm.get('authors') as FormArray;
-    
-  // 
-
-  
+  ngOnInit(): void {
+    this.authorsForm.valueChanges.subscribe(data => {
+      console.log(data)
+    })
+  }
 
 // onSubmit = () => {
   
@@ -52,8 +40,7 @@ export class BookFormComponent implements OnInit {
 // }
 
 
-
-
+}
   
 
 

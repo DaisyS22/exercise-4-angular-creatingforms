@@ -18,21 +18,10 @@ export class BookItemComponent {
 
   editBook(book: any) {
     this.router.navigate(['book/form', book]);
-    this.bookForm.patchValue({
-      name: book.name,
-      authors: book.authors,
-      isbn: book.isbn,
-
-      
-    })
     
-    
-    localStorage.setItem('name', JSON.stringify(this.bookForm))
-    
+    // localStorage.setItem('name', JSON.stringify(this.bookForm))    
   }
-
   
-
 
   deleteBook() {
     console.log(`Deleting book: ${this.book.name}`);
