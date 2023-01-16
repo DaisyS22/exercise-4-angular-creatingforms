@@ -6,13 +6,16 @@ import { BookService } from '../../services/book.service';
 @Component({
   selector: 'app-book-form',
   templateUrl: './book-form.component.html',
-  styleUrls: ['./book-form.component.scss']
+  styleUrls: ['./book-form.component.scss'],
 })
 export class BookFormComponent implements OnInit {
-
- bookForm: FormGroup;
- authorsForm: FormArray;
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private bookService: BookService) {
+  bookForm: FormGroup;
+  authorsForm: FormArray;
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private bookService: BookService
+  ) {
     this.bookForm = this.fb.group({
       name: new FormControl('KEKW'),
       authors: this.fb.array([
@@ -23,27 +26,17 @@ export class BookFormComponent implements OnInit {
     });
 
     this.authorsForm = this.bookForm.get('authors') as FormArray;
-    
-    
   }
   ngOnInit(): void {
-    this.authorsForm.valueChanges.subscribe(data => {
-      console.log(data)
-    })
+    this.authorsForm.valueChanges.subscribe((data) => {
+      console.log(data);
+    });
   }
 
-// onSubmit = () => {
-  
-//   const theBook:Book = this.bookForm.getRawValue() as Book;
-//   console.log(theBook);
-//   // this.submitted.emit(this.bookForm);
-// }
+  // onSubmit = () => {
 
-
+  //   const theBook:Book = this.bookForm.getRawValue() as Book;
+  //   console.log(theBook);
+  //   // this.submitted.emit(this.bookForm);
+  // }
 }
-  
-
-
-
-
-

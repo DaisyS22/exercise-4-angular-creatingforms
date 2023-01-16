@@ -1,35 +1,33 @@
 import { Injectable } from '@angular/core';
+import { Book } from '../models/book';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class BookService {
-  books: any[] = [
+  books: Book[] = [
     {
       id: 1,
       name: '境界の彼方',
       authors: ['Taichi Ishidate'],
-      isbn: '978-0062315007'
+      isbn: '978-0062315007',
     },
     {
       id: 2,
       name: 'あそびあそばせ',
       authors: ['Seiji Kishi'],
-      isbn: '978-0743273567'
+      isbn: '978-0743273567',
     },
     {
       id: 3,
       name: '四月は君の嘘',
       authors: ['Takehiko Shinjō'],
-      isbn: '978-0446310789'
-    }
+      isbn: '978-0446310789',
+    },
   ];
   values: any;
 
   constructor() {}
-
-  
 
   getBooks() {
     return this.books;

@@ -1,16 +1,8 @@
-
-
-<form>
-  id: {{book?.id}}<br>
-  name: {{book?.name}}<br>
-  authors: {{book?.authors}}<br>
-  isbn: {{book?.isbn}}<br>
-  
-  <button type="button" (click)="editBook(book.id)">Edit</button>
-  <button (click)="deleteBook()">Delete</button>
-</form>
-
-
-
-
-
+<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+  <div class="pull-left">
+    <p class="list-group-item-text">id: {{ book.id }}</p>
+    <p class="list-group-item-text">name: {{ book.name }}</p>
+    <p class="list-group-item-text">authors: {{ book.authors }}</p>
+    <p class="list-group-item-text">isbn: {{ book.isbn }}</p>
+  </div>
+</a>

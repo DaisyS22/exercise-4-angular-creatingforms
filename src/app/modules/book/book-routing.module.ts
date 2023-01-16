@@ -3,19 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { BookListComponent } from './pages/book-list/book-list.component';
 import { BookFormComponent } from './pages/book-form/book-form.component';
-
+import { BookComponent } from './book.component';
 
 const routes: Routes = [
-
-  { 
-    path: '', 
-    component: BookListComponent 
-  },
   {
-    path: 'book/form',
-    component: BookFormComponent
-  }
-
+    path: '',
+    component: BookComponent,
+  },
 ];
 
 @NgModule({
@@ -23,9 +17,9 @@ const routes: Routes = [
   imports: [
     // 1 pass routers to router module
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
   ],
   // 2 export router module
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BookRoutingModule { }
+export class BookRoutingModule {}
