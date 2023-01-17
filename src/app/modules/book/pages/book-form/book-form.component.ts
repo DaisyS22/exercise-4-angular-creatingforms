@@ -10,28 +10,28 @@ import { BookService } from '../../services/book.service';
   styleUrls: ['./book-form.component.scss'],
 })
 export class BookFormComponent implements OnInit {
-  bookFormAdd: FormGroup;
-  authorsForm: FormArray;
-  constructor(private fb: FormBuilder) {
-    this.bookFormAdd = this.fb.group({
-      name: new FormControl('KEKW'),
-      authors: this.fb.array([
-        new FormControl('daisy'),
-        new FormControl('syete'),
-      ]),
-      isbn: new FormControl('1234123'),
-    });
-
-    this.authorsForm = this.bookFormAdd.get('authors') as FormArray;
-  }
   ngOnInit(): void {
-    this.authorsForm.valueChanges.subscribe((data) => {
-      console.log(data);
-    });
+    throw new Error('Method not implemented.');
   }
-
+  // bookFormAdd: FormGroup;
+  // authorsForm: FormArray;
+  // constructor(private fb: FormBuilder) {
+  //   this.bookFormAdd = this.fb.group({
+  //     name: new FormControl('KEKW'),
+  //     authors: this.fb.array([
+  //       new FormControl('daisy'),
+  //       new FormControl('syete'),
+  //     ]),
+  //     isbn: new FormControl('1234123'),
+  //   });
+  //   this.authorsForm = this.bookFormAdd.get('authors') as FormArray;
+  // }
+  // ngOnInit(): void {
+  //   this.authorsForm.valueChanges.subscribe((data) => {
+  //     console.log(data);
+  //   });
+  // }
   // onSubmit = () => {
-
   //   const theBook:Book = this.bookForm.getRawValue() as Book;
   //   console.log(theBook);
   //   // this.submitted.emit(this.bookForm);

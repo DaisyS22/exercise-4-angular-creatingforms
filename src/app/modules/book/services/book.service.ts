@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Author } from '../models/author';
@@ -52,7 +53,7 @@ export class BookService {
 
   getBooks() {
     return this.books.slice();
-    // return this.https.get('http://localhost:3000/books')
+    // return this.https.get('http://localhost:3000/books');
   }
 
   getBook(index: number) {

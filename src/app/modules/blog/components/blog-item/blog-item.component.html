@@ -1,27 +1,15 @@
-<br>
-
-<div class="card">
-<div class="card__content">
-    <div class="center">
-    <p class="font__color">
-    id: {{blog.id}}<br>
-    name: {{blog.title}}<br>
-    description: {{blog.description}}<br>
-    author: {{blog.author}}<br><br>
-    </p>    
-    </div>
-    <div class="divStyle" *ngFor="let comment of blog.comments">
-        <div>
-            Comments:<br>
-            name: {{comment.name}}<br>
-            comment: {{comment.comment}}<br>
-        </div>
-    </div>
-    <br>
-    <button (click)="editBook()">Edit</button>
-    <button (click)="deleteBook()">Delete</button><br>
- 
-    <br>
-</div>
-</div>
-
+<a
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+>
+  <div class="pull-left">
+    <p class="list-group-item-text">{{ blog.id }}</p>
+    <p class="list-group-item-text">{{ blog.title }}</p>
+    <p class="list-group-item-text">{{ blog.description }}</p>
+    <p class="list-group-item-text">isbn: {{ blog.author }}</p>
+    <p class="list-group-item-text" *ngFor="let comment of blog.comments">
+      {{ comment.name }}
+    </p>
+  </div>
+</a>

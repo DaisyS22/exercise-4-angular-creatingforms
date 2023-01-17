@@ -7,6 +7,7 @@ import { BookService } from './modules/book/services/book.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BookModule } from './modules/book/book.module';
+import { BlogService } from './modules/blog/services/blog.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,7 @@ import { BookModule } from './modules/book/book.module';
     BookModule,
     ReactiveFormsModule,
   ],
-  providers: [BookService],
+  providers: [BookService, BlogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

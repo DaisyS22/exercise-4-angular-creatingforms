@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BlogComponent } from './modules/blog/blog.component';
+import { BlogDetailComponent } from './modules/blog/pages/blog-detail/blog-detail.component';
+import { BlogEditComponent } from './modules/blog/pages/blog-edit/blog-edit.component';
+import { BlogStartComponent } from './modules/blog/pages/blog-start/blog-start.component';
 import { BookComponent } from './modules/book/book.component';
 import { BookDetailComponent } from './modules/book/pages/book-detail/book-detail.component';
 import { BookEditComponent } from './modules/book/pages/book-edit/book-edit.component';
@@ -14,8 +18,21 @@ const routes: Routes = [
   },
   {
     path: 'blog',
-    loadChildren: () =>
-      import('./modules/blog/blog.module').then((m) => m.BlogModule),
+    component: BlogComponent,
+    children: [
+      {
+        path: '',
+        component: BlogStartComponent,
+      },
+      {
+        path: ':id',
+        component: BlogDetailComponent,
+      },
+      {
+        path: ':id/edit',
+        component: BlogEditComponent,
+      },
+    ],
   },
   {
     path: 'book',
@@ -47,6 +64,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/book/pages/book-form.module').then(
         (m) => m.BookFormModule
+      ),
+  },
+  {
+    path: 'blog-form/form',
+    loadChildren: () =>
+      import('./modules/blog/pages/blog-edit/blog-form.module').then(
+        (m) => m.BlogFormModule
       ),
   },
   {

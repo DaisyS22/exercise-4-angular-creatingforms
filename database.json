@@ -1,0 +1,19 @@
+{
+  "books": [
+    {
+      "name": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": 1234411
+    },
+    {
+      "name": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "isbn": 1234412
+    },
+    {
+      "name": "The Silmarillion",
+      "author": "J.R.R. Tolkien",
+      "isbn": 1234413
+    }
+  ]
+}

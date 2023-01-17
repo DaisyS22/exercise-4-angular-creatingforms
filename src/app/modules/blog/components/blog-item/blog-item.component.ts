@@ -1,22 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Blog } from '../../models/blog';
 
 @Component({
   selector: 'app-blog-item',
   templateUrl: './blog-item.component.html',
-  styleUrls: ['./blog-item.component.scss']
+  styleUrls: ['./blog-item.component.scss'],
 })
-export class BlogItemComponent {
+export class BlogItemComponent implements OnInit {
+  @Input() blog: Blog;
+  @Input() index: number;
 
-  @Input() blog: any;
-
-  editBook() {
-    // logic to edit book goes here
-    console.log(`Editing book: ${this.blog.name}`);
-  }
-
-  deleteBook() {
-    // logic to delete book goes here
-    console.log(`Deleting book: ${this.blog.name}`);
-  }
-
+  ngOnInit(): void {}
 }
