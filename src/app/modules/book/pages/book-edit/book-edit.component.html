@@ -22,24 +22,23 @@
       </div>
       <div class="row">
         <div class="col-xs-12" formArrayName="authors">
-          <label for="authors">Author/s</label>
+          <label for="authors">Authors</label>
           <div
             class="row"
-            *ngFor="
-              let author of bookForm.get('authors')['controls'];
-              let i = index
-            "
+            *ngFor="let authorCtrl of bookControls; let i = index"
             [formGroupName]="i"
           >
             <div class="col-xs-8">
-              <input
-                type="text"
-                class="form-control"
-                formControlName="authors"
-              />
+              <input type="text" class="form-control" formControlName="name" />
             </div>
             <div class="col-xs-2">
-              <button class="btn btn-danger">Delete</button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDeleteAuthor(i)"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>

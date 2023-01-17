@@ -6,7 +6,10 @@
   <div class="pull-left">
     <p class="list-group-item-text">{{ book.id }}</p>
     <p class="list-group-item-text">{{ book.name }}</p>
-    <p class="list-group-item-text">{{ book.authors }}</p>
+    <p class="list-group-item-text" *ngFor="let author of book.authors">
+      {{ author.name }}
+    </p>
+
     <p class="list-group-item-text">isbn: {{ book.isbn }}</p>
   </div>
 </a>

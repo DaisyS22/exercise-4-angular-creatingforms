@@ -29,7 +29,7 @@ export class BookListComponent implements OnInit {
     this.books = this.bookService.getBooks();
   }
 
-  onNewRecipe() {
+  onNewAuthor() {
     this.router.navigate(['new'], { relativeTo: this.route });
   }
 

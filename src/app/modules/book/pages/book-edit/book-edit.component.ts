@@ -13,8 +13,10 @@ export class BookEditComponent implements OnInit {
   id: number;
   editMode = false;
   bookForm: FormGroup;
-  authorsForm: FormArray;
-  // authorsForm: FormArray;
+
+  get bookControls() {
+    return (this.bookForm.get('authors') as FormArray).controls;
+  }
 
   constructor(
     private route: ActivatedRoute,
@@ -30,22 +32,18 @@ export class BookEditComponent implements OnInit {
     });
   }
 
-  get Controls() {
-    return (<FormArray>this.bookForm.get('authors')).controls;
-  }
-
   onSubmit() {
     // const newBook = new Book(
     //   this.bookForm.value['name'],
     //   this.bookForm.value['authors'],
     //   this.bookForm.value['isbn']
     // );
-    // if (this.editMode) {
-    //   this.bookService.updateBook(this.id, this.bookForm.value);
-    // } else {
-    //   this.bookService.addBook(this.bookForm.value);
-    // }
-    // this.onCancel();
+    if (this.editMode) {
+      this.bookService.updateBook(this.id, this.bookForm.value);
+    } else {
+      this.bookService.addBook(this.bookForm.value);
+    }
+    this.onCancel();
     console.log(this.bookForm.value);
   }
 
@@ -55,6 +53,10 @@ export class BookEditComponent implements OnInit {
         name: new FormControl(),
       })
     );
+  }
+
+  onDeleteAuthor(index: number) {
+    (<FormArray>this.bookForm.get('authors')).removeAt(index);
   }
 
   onCancel() {
@@ -72,7 +74,11 @@ export class BookEditComponent implements OnInit {
       bookIsbn = book.isbn;
       if (book['authors']) {
         for (let author of book.authors) {
-          bookAuthors.push(new FormGroup({}));
+          bookAuthors.push(
+            new FormGroup({
+              name: new FormControl(author.name),
+            })
+          );
         }
       }
     }
