@@ -60,12 +60,20 @@ export class BookEditComponent implements OnInit {
   }
 
   onCancel() {
+    // this.router.navigate(['book'], { relativeTo: this.route });
+    // create a router what will navigate to the parent route
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 
   private initForm() {
     let bookName = '';
-    let bookAuthors = new FormArray([]);
+    // let bookAuthors = new FormArray([]);
+    // create bookAuthors with default value
+    let bookAuthors = new FormArray([
+      new FormGroup({
+        name: new FormControl({ value: 'Rogelio Umbay', disabled: true }),
+      }),
+    ]);
     let bookIsbn = '';
 
     if (this.editMode) {
