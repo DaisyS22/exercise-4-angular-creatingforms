@@ -1,29 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Book } from '../../models/book';
 import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-book-item',
   templateUrl: './book-item.component.html',
-  styleUrls: ['./book-item.component.scss']
+  styleUrls: ['./book-item.component.scss'],
 })
-export class BookItemComponent {
+export class BookItemComponent implements OnInit {
+  @Input() book: Book;
+  @Input() index: number;
 
-  @Input() book: any | undefined;
-  @Input() bookForm: FormGroup;
- 
-
-  constructor(private router: Router, private bookService: BookService) { }
-
-  editBook(book: any) {
-    this.router.navigate(['book/form', book]);
-    
-    // localStorage.setItem('name', JSON.stringify(this.bookForm))    
-  }
-  
-
-  deleteBook() {
-    console.log(`Deleting book: ${this.book.name}`);
-  }
+  ngOnInit(): void {}
 }
