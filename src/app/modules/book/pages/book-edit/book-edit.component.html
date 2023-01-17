@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success me-3">Save</button>
+          <button type="button" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" formArrayName="authors">
+          <label for="authors">Author/s</label>
+          <div
+            class="row"
+            *ngFor="
+              let author of bookForm.get('authors')['controls'];
+              let i = index
+            "
+            [formGroupName]="i"
+          >
+            <div class="col-xs-8">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="authors"
+              />
+            </div>
+            <div class="col-xs-2">
+              <button class="btn btn-danger">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">ISBN</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="isbn"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="button" class="btn btn-success" (click)="onAddAuthor()">
+            Add Author
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

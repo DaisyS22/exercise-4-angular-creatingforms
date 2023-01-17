@@ -1,8 +1,12 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+>
   <div class="pull-left">
-    <p class="list-group-item-text">id: {{ book.id }}</p>
-    <p class="list-group-item-text">name: {{ book.name }}</p>
-    <p class="list-group-item-text">authors: {{ book.authors }}</p>
+    <p class="list-group-item-text">{{ book.id }}</p>
+    <p class="list-group-item-text">{{ book.name }}</p>
+    <p class="list-group-item-text">{{ book.authors }}</p>
     <p class="list-group-item-text">isbn: {{ book.isbn }}</p>
   </div>
 </a>

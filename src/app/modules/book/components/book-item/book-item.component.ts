@@ -11,15 +11,7 @@ import { BookService } from '../../services/book.service';
 })
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
-  @Output() bookSelected = new EventEmitter<void>();
+  @Input() index: number;
 
-  constructor() {}
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-  onSelected() {
-    this.bookSelected.emit();
-  }
+  ngOnInit(): void {}
 }

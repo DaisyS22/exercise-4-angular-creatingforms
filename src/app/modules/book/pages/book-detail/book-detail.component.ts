@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Book } from '../../models/book';
 import { BookService } from '../../services/book.service';
 
@@ -8,17 +8,28 @@ import { BookService } from '../../services/book.service';
   templateUrl: './book-detail.component.html',
   styleUrls: ['./book-detail.component.scss'],
 })
-export class BookDetailComponent {
-  @Input() book: Book;
-  constructor(private router: Router, private bookService: BookService) {}
+export class BookDetailComponent implements OnInit {
+  book: Book;
+  id: number;
 
-  editBook(book: any) {
-    this.router.navigate(['book-form/form', book]);
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private bookService: BookService
+  ) {}
 
-    // localStorage.setItem('name', JSON.stringify(this.bookForm))
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.id = +params['id'];
+      this.book = this.bookService.getBook(this.id);
+    });
   }
 
-  deleteBook() {
-    // console.log(`Deleting book: ${this.book.name}`);
+  onEditBook() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+  }
+
+  onDeleteBook() {
+    this.bookService.deleteBook(this.id);
   }
 }

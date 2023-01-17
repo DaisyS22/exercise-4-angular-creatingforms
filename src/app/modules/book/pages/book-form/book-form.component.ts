@@ -9,14 +9,10 @@ import { BookService } from '../../services/book.service';
   styleUrls: ['./book-form.component.scss'],
 })
 export class BookFormComponent implements OnInit {
-  bookForm: FormGroup;
+  bookFormAdd: FormGroup;
   authorsForm: FormArray;
-  constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private bookService: BookService
-  ) {
-    this.bookForm = this.fb.group({
+  constructor(private fb: FormBuilder) {
+    this.bookFormAdd = this.fb.group({
       name: new FormControl('KEKW'),
       authors: this.fb.array([
         new FormControl('daisy'),
@@ -25,7 +21,7 @@ export class BookFormComponent implements OnInit {
       isbn: new FormControl('1234123'),
     });
 
-    this.authorsForm = this.bookForm.get('authors') as FormArray;
+    this.authorsForm = this.bookFormAdd.get('authors') as FormArray;
   }
   ngOnInit(): void {
     this.authorsForm.valueChanges.subscribe((data) => {

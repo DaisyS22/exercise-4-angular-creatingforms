@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from './models/book';
+import { BookService } from './services/book.service';
 
 @Component({
   selector: 'app-book',
@@ -9,9 +10,11 @@ import { Book } from './models/book';
 export class BookComponent implements OnInit {
   selectedBook: Book;
 
-  constructor() {}
+  constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // this.bookService.bookSelected.subscribe((book: Book) => {
+    //   this.selectedBook = book;
+    // });
   }
 }

@@ -1,6 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Book } from '../../models/book';
 import { BookService } from '../../services/book.service';
 
@@ -10,17 +11,29 @@ import { BookService } from '../../services/book.service';
   styleUrls: ['./book-list.component.scss'],
 })
 export class BookListComponent implements OnInit {
-  @Output() bookWasSelected = new EventEmitter<Book>();
-
   books: Book[];
+  subscription: Subscription;
 
-  constructor(private bookService: BookService) {}
+  constructor(
+    private bookService: BookService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.subscription = this.bookService.bookChanged.subscribe(
+      (books: Book[]) => {
+        this.books = books;
+      }
+    );
     this.books = this.bookService.getBooks();
   }
 
-  onBookSelected(book: any) {
-    this.bookWasSelected.emit(book);
+  onNewRecipe() {
+    this.router.navigate(['new'], { relativeTo: this.route });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
