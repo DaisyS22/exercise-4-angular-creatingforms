@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Book } from 'src/app/modules/book/models/book';
+import { BookService } from 'src/app/modules/book/services/book.service';
 
 @Component({
   selector: 'app-command-bar',
@@ -7,10 +9,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./command-bar.component.scss'],
 })
 export class CommandBarComponent {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private bookService: BookService
+  ) {}
 
   onDeleteAll() {
-    // wala pa to next exercise pa
+    this.bookService.deleteAllBooks();
   }
 
   onNewBook() {

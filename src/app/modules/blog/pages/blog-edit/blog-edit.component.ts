@@ -14,7 +14,7 @@ export class BlogEditComponent implements OnInit {
   blogForm: FormGroup;
 
   get blogControls() {
-    return (this.blogForm.get('authors') as FormArray).controls;
+    return (this.blogForm.get('comments') as FormArray).controls;
   }
 
   constructor(
@@ -70,7 +70,10 @@ export class BlogEditComponent implements OnInit {
     let blogAuthor = '';
     let blogComments = new FormArray([
       new FormGroup({
-        name: new FormControl({ value: 'Rogelio Umbay', disabled: true }),
+        name: new FormControl({
+          value: 'This is a sample comment',
+          disabled: true,
+        }),
       }),
     ]);
 
@@ -79,7 +82,7 @@ export class BlogEditComponent implements OnInit {
       blogTitle = blog.title;
       blogDescription = blog.description;
       blogAuthor = blog.author;
-      if (blog['authors']) {
+      if (blog['comments']) {
         for (let author of blog.comments) {
           blogComments.push(
             new FormGroup({

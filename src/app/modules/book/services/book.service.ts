@@ -51,6 +51,11 @@ export class BookService {
 
   constructor() {}
 
+  setBooks(books: Book[]) {
+    this.books = books;
+    this.bookChanged.next(this.books.slice());
+  }
+
   getBooks() {
     return this.books.slice();
     // return this.https.get('http://localhost:3000/books');
@@ -72,6 +77,11 @@ export class BookService {
 
   deleteBook(index: number) {
     this.books.splice(index, 1);
+    this.bookChanged.next(this.books.slice());
+  }
+
+  deleteAllBooks() {
+    this.books = [];
     this.bookChanged.next(this.books.slice());
   }
 }

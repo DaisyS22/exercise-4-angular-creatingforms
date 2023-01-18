@@ -10,9 +10,7 @@ import { BookService } from '../../services/book.service';
   styleUrls: ['./book-form.component.scss'],
 })
 export class BookFormComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
   // bookFormAdd: FormGroup;
   // authorsForm: FormArray;
   // constructor(private fb: FormBuilder) {

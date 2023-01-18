@@ -17,9 +17,26 @@
           </div>
         </div>
       </div>
+      <div class="row" style="margin-top: 10px">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" formControlName="title" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" formControlName="author" class="form-control" />
+          </div>
+        </div>
+      </div>
+
       <div class="row">
-        <div class="col-xs-12" formArrayName="authors">
-          <label for="description">Description</label>
+        <div class="col-xs-12" formArrayName="comments">
+          <label for="comments">Comments</label>
           <div
             class="row"
             *ngFor="let commentCtrl of blogControls; let i = index"
@@ -41,14 +58,7 @@
           </div>
         </div>
       </div>
-      <div class="row" style="margin-top: 10px">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="name">Author</label>
-            <input type="text" formControlName="author" class="form-control" />
-          </div>
-        </div>
-      </div>
+
       <hr />
       <div class="row">
         <div class="col-xs-12">
@@ -57,7 +67,7 @@
             class="btn btn-success"
             (click)="onAddComment()"
           >
-            Add Author
+            Add Comment
           </button>
         </div>
       </div>
