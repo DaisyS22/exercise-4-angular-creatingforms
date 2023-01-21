@@ -9,10 +9,14 @@ import { RouterModule } from '@angular/router';
 import { BookModule } from './modules/book/book.module';
 import { BlogService } from './modules/blog/services/blog.service';
 import { HttpClientModule } from '@angular/common/http';
-import { DropdownDirective } from './shared/dropdown.directive';
+import { DataStorageService } from './shared/data-storage.service';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AuthComponent, LoadingSpinnerComponent],
+  providers: [BookService, BlogService, DataStorageService],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,7 +27,5 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [BookService, BlogService],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}

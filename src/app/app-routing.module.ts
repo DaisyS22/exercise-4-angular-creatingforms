@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
 import { BlogComponent } from './modules/blog/blog.component';
 import { BlogDetailComponent } from './modules/blog/pages/blog-detail/blog-detail.component';
 import { BlogEditComponent } from './modules/blog/pages/blog-edit/blog-edit.component';
@@ -9,6 +10,7 @@ import { BookDetailComponent } from './modules/book/pages/book-detail/book-detai
 import { BookEditComponent } from './modules/book/pages/book-edit/book-edit.component';
 import { BookFormModule } from './modules/book/pages/book-form.module';
 import { BookStartComponent } from './modules/book/pages/book-start/book-start.component';
+import { BooksResolverService } from './modules/book/resolver/books-resolver.service';
 
 const routes: Routes = [
   {
@@ -51,11 +53,13 @@ const routes: Routes = [
       {
         path: ':id',
         component: BookDetailComponent,
+        resolve: [BooksResolverService],
       },
 
       {
         path: ':id/edit',
         component: BookEditComponent,
+        resolve: [BooksResolverService],
       },
     ],
   },
@@ -69,7 +73,7 @@ const routes: Routes = [
   {
     path: 'blog-form/form',
     loadChildren: () =>
-      import('./modules/blog/pages/blog-edit/blog-form.module').then(
+      import('./modules/blog/pages/blog-form/blog-form.module').then(
         (m) => m.BlogFormModule
       ),
   },
@@ -77,6 +81,10 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () =>
       import('./modules/profile/user.module').then((m) => m.UserModule),
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
   },
 ];
 

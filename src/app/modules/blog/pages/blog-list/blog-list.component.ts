@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Book } from 'src/app/modules/book/models/book';
 import { BookService } from 'src/app/modules/book/services/book.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Blog } from '../../models/blog';
 import { BlogService } from '../../services/blog.service';
 
@@ -18,7 +19,8 @@ export class BlogListComponent implements OnInit, OnDestroy {
   constructor(
     private blogService: BlogService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dataStorageService: DataStorageService
   ) {}
 
   ngOnInit() {
@@ -32,6 +34,13 @@ export class BlogListComponent implements OnInit, OnDestroy {
 
   onNewComment() {
     this.router.navigate(['new'], { relativeTo: this.route });
+  }
+  onSaveBlogsData() {
+    this.dataStorageService.storeBlogs();
+  }
+
+  onFetchBlogsData() {
+    this.dataStorageService.fetchBlogs().subscribe();
   }
 
   ngOnDestroy() {
