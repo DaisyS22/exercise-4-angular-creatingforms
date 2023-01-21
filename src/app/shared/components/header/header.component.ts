@@ -13,7 +13,15 @@ export class HeaderComponent {
     this.dataStorageService.storeBooks();
   }
 
+  onSaveBlogsData() {
+    this.dataStorageService.storeBlogs();
+  }
+
   onFetchData() {
-    // this.dataStorageService.fetchBooks().subscribe();
+    this.dataStorageService.fetchBooks().subscribe();
+  }
+
+  onFetchBlogsData() {
+    this.dataStorageService.fetchBlogs().subscribe();
   }
 }

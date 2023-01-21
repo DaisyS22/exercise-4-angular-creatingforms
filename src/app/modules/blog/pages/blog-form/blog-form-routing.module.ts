@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogFormComponent } from '../blog-form/blog-form.component';
+import { BlogFormComponent } from './blog-form.component';
 
 const routes: Routes = [
   {

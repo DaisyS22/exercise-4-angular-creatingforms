@@ -10,44 +10,30 @@ import { Book } from '../models/book';
 export class BookService {
   bookChanged = new Subject<Book[]>();
 
-  private books: Book[] = [
-    new Book(
-      1,
-      '境界の彼方',
-      [new Author('Taichi Ishidate'), new Author('Arisa Takigawa')],
-      '978-0062315007'
-    ),
-    new Book(
-      2,
-      'あそびあそばせ',
-      [new Author('Seiji Kishi'), new Author('Inori Minase')],
-      '978-0743273567'
-    ),
-    new Book(
-      3,
-      '四月は君の嘘',
-      [new Author('Takehiko Shinjō'), new Author('Yukari Hashimoto')],
-      '978-0446310789'
-    ),
-  ];
-  // {
-  //   id: 1,
-  //   name: '境界の彼方',
-  //   authors: 'Taichi Ishidate, Arisa Takigawa',
-  //   isbn: '978-0062315007',
-  // },
-  // {
-  //   id: 2,
-  //   name: 'あそびあそばせ',
-  //   authors: 'Seiji Kishi, Inori Minase',
-  //   isbn: '978-0743273567',
-  // },
-  // {
-  //   id: 3,
-  //   name: '四月は君の嘘',
-  //   authors: 'Takehiko Shinjō, Yukari Hashimoto',
-  //   isbn: '978-0446310789',
-  // },
+  private books: Book[] = [];
+  // constructor(private actions$: Actions, private bookService: BookService) {}
+
+  // book$ = this.store.select(selectBooks)
+  // private books: Book[] = [
+  //   new Book(
+  //     1,
+  //     '境界の彼方',
+  //     [new Author('Taichi Ishidate'), new Author('Arisa Takigawa')],
+  //     '978-0062315007'
+  //   ),
+  //   new Book(
+  //     2,
+  //     'あそびあそばせ',
+  //     [new Author('Seiji Kishi'), new Author('Inori Minase')],
+  //     '978-0743273567'
+  //   ),
+  //   new Book(
+  //     3,
+  //     '四月は君の嘘',
+  //     [new Author('Takehiko Shinjō'), new Author('Yukari Hashimoto')],
+  //     '978-0446310789'
+  //   ),
+  // ];
 
   constructor() {}
 
