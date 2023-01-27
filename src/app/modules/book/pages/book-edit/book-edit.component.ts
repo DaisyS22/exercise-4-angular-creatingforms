@@ -33,11 +33,6 @@ export class BookEditComponent implements OnInit {
   }
 
   onSubmit() {
-    // const newBook = new Book(
-    //   this.bookForm.value['name'],
-    //   this.bookForm.value['authors'],
-    //   this.bookForm.value['isbn']
-    // );
     if (this.editMode) {
       this.bookService.updateBook(this.id, this.bookForm.value);
     } else {
@@ -60,15 +55,12 @@ export class BookEditComponent implements OnInit {
   }
 
   onCancel() {
-    // this.router.navigate(['book'], { relativeTo: this.route });
-    // create a router what will navigate to the parent route
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 
   private initForm() {
     let bookName = '';
-    // let bookAuthors = new FormArray([]);
-    // create bookAuthors with default value
+
     let bookAuthors = new FormArray([
       new FormGroup({
         name: new FormControl({ value: 'Rogelio Umbay', disabled: true }),
