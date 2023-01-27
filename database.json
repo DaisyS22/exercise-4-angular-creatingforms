@@ -1,31 +1,321 @@
 {
   "books": [
     {
-      "name": "The Hobbit",
-      "author": [
+      "id": 1,
+      "name": "境界の彼方",
+      "authors": [
         {
-          "name": "J.R.R. Tolkien"
+          "name": "Taichi Ishidate"
+        },
+        {
+          "name": "Arisa Takigawa"
         }
       ],
-      "isbn": 1234411
+      "isbn": "978-0062315007"
     },
     {
-      "name": "The Lord of the Rings",
-      "author": [
+      "id": 2,
+      "name": "あそびあそばせ",
+      "authors": [
         {
-          "name": "J.R.R. Tolkien"
+          "name": "Seiji Kishi"
+        },
+        {
+          "name": "Inori Minase"
         }
       ],
-      "isbn": 1234412
+      "isbn": "978-0743273567"
     },
     {
-      "name": "The Silmarillion",
-      "author": [
+      "id": 3,
+      "name": "四月は君の嘘",
+      "authors": [
         {
-          "name": "J.R.R. Tolkien"
+          "name": "Takehiko Shinjō"
+        },
+        {
+          "name": "Yukari Hashimoto"
         }
       ],
-      "isbn": 1234413
+      "isbn": "978-0446310789"
+    },
+    {
+      "id": 1,
+      "name": "境界の彼方",
+      "authors": [
+        {
+          "name": "Taichi Ishidate"
+        },
+        {
+          "name": "Arisa Takigawa"
+        }
+      ],
+      "isbn": "978-0062315007"
+    },
+    {
+      "id": 2,
+      "name": "あそびあそばせ",
+      "authors": [
+        {
+          "name": "Seiji Kishi"
+        },
+        {
+          "name": "Inori Minase"
+        }
+      ],
+      "isbn": "978-0743273567"
+    },
+    {
+      "id": 3,
+      "name": "四月は君の嘘",
+      "authors": [
+        {
+          "name": "Takehiko Shinjō"
+        },
+        {
+          "name": "Yukari Hashimoto"
+        }
+      ],
+      "isbn": "978-0446310789"
+    },
+    {
+      "name": "Rogelioooo",
+      "authors": [
+        {
+          "name": "Euphyyyy"
+        }
+      ],
+      "isbn": "123123187998172"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "My first blog",
+      "description": "This is my first blog",
+      "author": "Daisy taichou",
+      "comments": [
+        {
+          "name": "Euph taichou"
+        },
+        {
+          "name": "Daisy taichou"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "My first blog",
+      "description": "This is my first blog",
+      "author": "Daisy taichou",
+      "comments": [
+        {
+          "name": "Euph taichou"
+        },
+        {
+          "name": "Daisy taichou"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "My first blog",
+      "description": "This is my first blog",
+      "author": "Daisy taichou",
+      "comments": [
+        {
+          "name": "Euph taichou"
+        },
+        {
+          "name": "Daisy taichou"
+        }
+      ]
+    }
+  ],
+  "signupUsersList": [
+    {
+      "id": 1,
+      "email": "rogelioumbay@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "123904871298",
+      "id": 2
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "123904871298",
+      "id": 3
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": " form.reset();",
+      "returnSecureToken": true,
+      "id": 4
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "json-server-auth",
+      "id": 5
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "json-server-auth",
+      "id": 6
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "json-server-auth",
+      "accessToken": "1234567890",
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "123456",
+      "accessToken": "accessToken",
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "email": "rogelio@gmail.com",
+      "password": "rogeliko",
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "123456",
+      "id": 17
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "123456",
+      "returnAccessToken": true,
+      "id": 18
+    },
+    {
+      "email": "rogelio@gmail.com",
+      "password": "123456",
+      "accessToken": "123",
+      "id": 19
+    },
+    {
+      "email": "rogelio@gmail.co",
+      "password": "1234456",
+      "id": 20
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "21341234",
+      "id": 21
+    },
+    {
+      "email": "rogelio@gmail.com",
+      "password": "213947129803",
+      "accessToken": true,
+      "id": 22
+    },
+    {
+      "email": "rogelio@gmail.com",
+      "password": "12341234123",
+      "accessToken": true,
+      "id": 23
+    },
+    {
+      "email": "daisy@gmail.com",
+      "password": "1290347291834",
+      "accessToken": true,
+      "id": 24
+    },
+    {
+      "email": "daisy@gmail.com",
+      "password": "90kjsldkf",
+      "accessToken": true,
+      "id": 25
+    },
+    {
+      "email": "rogeliko@gmail.com",
+      "password": "lkjsamcasd",
+      "accessToken": true,
+      "id": 26
+    },
+    {
+      "email": "sad@gmail.com",
+      "password": "werwqer",
+      "accessToken": true,
+      "id": 27
+    },
+    {
+      "email": "rogelioumba@gmail.com",
+      "password": "9827398423",
+      "accessToken": true,
+      "id": 28
+    },
+    {
+      "email": "rogeliouambvas@gmail.com",
+      "password": "aksldjfoiajsd",
+      "accessToken": true,
+      "id": 29
+    },
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "123456",
+      "accessToken": true,
+      "id": 30
+    },
+    {
+      "email": "rogeliou@gmail.com",
+      "password": "12345fa",
+      "id": 31
+    },
+    {
+      "email": "daisy@gmail.com",
+      "password": "aksdlfjasou",
+      "id": 32
+    },
+    {
+      "email": "daisy@gmail.com",
+      "password": "rogelio",
+      "returnSecureToken": true,
+      "id": 33
+    },
+    {
+      "email": "daisy@gmail.com",
+      "password": "daisy1",
+      "returnSecureToken": true,
+      "id": 34
+    }
+  ],
+  "loginUsersList": [
+    {
+      "email": "rogelioumbay@gmail.com",
+      "password": "123456"
     }
   ]
 }

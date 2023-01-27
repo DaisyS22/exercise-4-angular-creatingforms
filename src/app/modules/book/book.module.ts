@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 import { BookComponent } from './book.component';
 import { RouterModule } from '@angular/router';
+import { AuthComponent } from 'src/app/auth/auth.component';
 
 @NgModule({
   declarations: [

@@ -9,28 +9,34 @@ import { Comment } from '../models/comment';
 export class BlogService {
   blogChanged = new Subject<Blog[]>();
 
-  private blogs: Blog[] = [
-    new Blog(
-      1,
-      'How to cook an egg',
-      'This is blog on how to cook an egg',
-      'Daisy Taichou',
-      [new Comment('That was so easy!'), new Comment('I love eggs!')]
-    ),
+  private blogs: Blog[] = [];
+  // private blogs: Blog[] = [
+  //   new Blog(
+  //     1,
+  //     'How to cook an egg',
+  //     'This is blog on how to cook an egg',
+  //     'Daisy Taichou',
+  //     [new Comment('That was so easy!'), new Comment('I love eggs!')]
+  //   ),
 
-    new Blog(
-      2,
-      'How to cook an adobo',
-      'This is blog on how to cook an egg',
-      'Euphytaichou',
-      [
-        new Comment('That is the Filipino food!'),
-        new Comment('Adobe is the best!'),
-      ]
-    ),
-  ];
+  //   new Blog(
+  //     2,
+  //     'How to cook an adobo',
+  //     'This is blog on how to cook an egg',
+  //     'Euphytaichou',
+  //     [
+  //       new Comment('That is the Filipino food!'),
+  //       new Comment('Adobe is the best!'),
+  //     ]
+  //   ),
+  // ];
 
   constructor() {}
+
+  setBlogs(blogs: Blog[]) {
+    this.blogs = blogs;
+    this.blogChanged.next(this.blogs.slice());
+  }
 
   getBlogs() {
     return this.blogs.slice();

@@ -36,4 +36,12 @@ export class BookListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  // ngOnInit(): void {
+
+  //   this.book$.subscribe((books) => {
+  //     console.log(books);
+  //   });
+  //   this.store.dispatch(type:BookActions.FetchBooks());
+  // }
 }
